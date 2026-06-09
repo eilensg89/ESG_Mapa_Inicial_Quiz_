@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mapa Inicial de Marca | ESG Experience™</title>
+  <meta name="description" content="Descubre qué tipo de marca puedes construir sin exponer tu vida privada y recibe un prompt personalizado para desarrollar tu marca con IA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --black:#0A0A0A;--cream:#F8F4EC;--cream2:#EFE6D8;--cream3:#E5D8C7;--stone:#C8B49A;
+  --body:#3D2010;--brown:#A0622A;--brown-dark:#7B4F24;--leather:#5C2E0E;
+  --gold-dark:#8B6914;--gold:#C9A646;--gold-light:#F5D78E;
+  --goldgrad:linear-gradient(145deg,#8B6914 0%,#D4A017 34%,#F5D78E 49%,#FFFBF0 54%,#D4A017 67%,#8B6914 100%);
+  --leathergrad:linear-gradient(160deg,#1A0A02 0%,#5C2E0E 20%,#A05A28 35%,#D4965A 48%,#A05A28 62%,#5C2E0E 80%,#1A0A02 100%);
+  --glass:rgba(248,244,236,.76);--glass2:rgba(239,230,216,.58);--line:rgba(123,79,36,.22);
+  --shadow:0 24px 70px rgba(61,32,16,.22),0 8px 22px rgba(61,32,16,.12),inset 0 1px 0 rgba(255,255,255,.36);
+  --radius:30px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--body);
+  background-color:var(--stone);
+  background-image:linear-gradient(rgba(248,244,236,.18),rgba(200,180,154,.10)),url('assets/esg-stone-bg.png');
+  background-size:cover;background-position:center;background-repeat:no-repeat;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+@media(min-width:900px){body{background-attachment:fixed}}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(circle at 50% 0%,rgba(255,251,240,.76),rgba(248,244,236,.24) 38%,rgba(160,98,42,.08) 100%)}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(180deg,rgba(248,244,236,.20),rgba(200,180,154,.06))}
+.site-header{position:sticky;top:0;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:rgba(248,244,236,.74);backdrop-filter:blur(22px);border-bottom:1px solid rgba(123,79,36,.14);box-shadow:0 8px 30px rgba(61,32,16,.08)}
+.site-brand{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#2a170b;font-weight:500;white-space:nowrap}.site-links{display:flex;gap:8px;align-items:center}.site-links a{border:1px solid rgba(123,79,36,.24);background:rgba(248,244,236,.44);color:#3D2010;text-decoration:none;font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:8px 11px;border-radius:999px;box-shadow:0 8px 18px rgba(61,32,16,.08)}
+.page{width:min(1040px,100%);margin:0 auto;padding:42px 18px 58px;min-height:calc(100vh - 54px);display:flex;align-items:center;justify-content:center}.shell{width:100%;max-width:860px;position:relative;perspective:1200px}.topline{text-align:center;margin-bottom:14px;letter-spacing:.32em;font-size:10px;color:var(--brown-dark);font-weight:600;text-transform:uppercase}.topline:after{content:"";display:block;width:min(360px,62vw);height:1px;margin:12px auto 0;background:linear-gradient(90deg,transparent,var(--brown-dark),var(--gold),transparent);opacity:.82}.logo{display:block;width:min(190px,42vw);margin:0 auto 18px;filter:drop-shadow(0 12px 18px rgba(92,46,14,.22))}.card{position:relative;border:1px solid rgba(123,79,36,.25);background:linear-gradient(145deg,rgba(248,244,236,.80),rgba(239,230,216,.56));box-shadow:var(--shadow);backdrop-filter:blur(10px);border-radius:var(--radius);padding:clamp(28px,5vw,56px);overflow:hidden;transform-style:preserve-3d}.card:before{content:"";position:absolute;inset:10px;border-radius:calc(var(--radius) - 10px);border:1px solid rgba(201,166,70,.20);pointer-events:none}.card:after{content:"";position:absolute;bottom:16px;left:50%;transform:translateX(-50%);width:38px;height:38px;background:url('assets/esg-butterfly.png') center/contain no-repeat;opacity:.82;filter:drop-shadow(0 8px 12px rgba(92,46,14,.18));pointer-events:none}.screen{display:none;animation:fade .32s ease both}.screen.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--brown-dark);font-weight:600;text-align:center;margin-bottom:16px}h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;line-height:.96;margin:0;color:#251206;text-wrap:balance;text-shadow:0 2px 0 rgba(92,46,14,.10),0 14px 30px rgba(92,46,14,.15)}h1{font-size:clamp(52px,9.5vw,94px);text-align:center;letter-spacing:-.04em}h2{font-size:clamp(40px,7.4vw,72px);text-align:center;letter-spacing:-.035em;margin-bottom:18px}h3{font-size:clamp(32px,5.4vw,52px);margin-bottom:14px}.gold-word{font-style:italic;background:linear-gradient(160deg,#1A0A02 0%,#8B6914 20%,#D4A017 35%,#F5D78E 46%,#FFFBF0 50%,#F5D78E 56%,#D4A017 65%,#8B6914 80%,#1A0A02 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none}.subtitle{font-size:clamp(17px,2.4vw,23px);line-height:1.65;text-align:center;margin:24px auto 0;max-width:700px;font-weight:300;color:rgba(61,32,16,.78)}.meta{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:28px auto 8px;color:var(--brown-dark);font-size:12px;letter-spacing:.04em}.pill{border:1px solid rgba(123,79,36,.24);border-radius:999px;padding:9px 14px;background:rgba(248,244,236,.50);box-shadow:0 8px 18px rgba(61,32,16,.08)}.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0}.benefit{border:1px solid rgba(123,79,36,.20);border-radius:22px;padding:20px 12px;text-align:center;background:rgba(248,244,236,.48);box-shadow:0 14px 34px rgba(92,46,14,.10),inset 0 1px 0 rgba(255,255,255,.30);font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;line-height:1.05;color:#251206}.progress-wrap{margin:0 auto 28px;max-width:560px}.progress-label{text-align:center;color:var(--brown-dark);font-size:12px;margin-bottom:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}.progress-track{height:10px;border:1px solid rgba(123,79,36,.26);border-radius:999px;background:rgba(248,244,236,.44);overflow:hidden;box-shadow:inset 0 1px 5px rgba(61,32,16,.10)}.progress-bar{height:100%;width:0%;background:var(--goldgrad);border-radius:999px;box-shadow:0 0 12px rgba(212,160,23,.35);transition:width .3s ease}.q-title{max-width:720px;margin:0 auto}.q-help{font-size:clamp(16px,2.1vw,20px);line-height:1.6;text-align:center;margin:18px auto 30px;max-width:680px;color:rgba(61,32,16,.72);font-weight:300}.options{display:grid;gap:13px;max-width:720px;margin:0 auto 28px}.option{width:100%;text-align:left;border:1px solid rgba(123,79,36,.30);border-radius:20px;padding:18px 20px;background:rgba(248,244,236,.52);color:var(--body);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.45;cursor:pointer;box-shadow:0 10px 22px rgba(92,46,14,.08),inset 0 1px 0 rgba(255,255,255,.24);transition:.18s ease;display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:center}.option .letter{width:38px;height:38px;border:1px solid rgba(123,79,36,.32);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--brown-dark);font-family:'Cormorant Garamond',serif;font-size:23px;background:rgba(248,244,236,.34)}.option:hover,.option.selected{transform:translateY(-2px);border-color:rgba(201,166,70,.72);background:rgba(248,244,236,.82);box-shadow:0 16px 34px rgba(92,46,14,.16)}.option.selected .letter{background:var(--goldgrad);color:#1A0A02;border-color:transparent;box-shadow:0 10px 18px rgba(139,105,20,.20)}.field{max-width:640px;margin:20px auto 10px}label{display:block;font-size:10px;letter-spacing:.20em;text-transform:uppercase;color:var(--brown-dark);margin-bottom:10px;font-weight:600}input,textarea{width:100%;border:1px solid rgba(123,79,36,.26);border-radius:18px;background:rgba(248,244,236,.60);color:var(--body);padding:16px 18px;font:400 16px/1.45 'DM Sans',sans-serif;outline:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}textarea{min-height:140px;resize:vertical}input:focus,textarea:focus{border-color:rgba(201,166,70,.80);box-shadow:0 0 0 4px rgba(212,160,23,.16),inset 0 1px 0 rgba(255,255,255,.35)}.actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center;margin-top:30px}.btn{appearance:none;cursor:pointer;text-decoration:none;border-radius:999px;padding:16px 26px;min-width:220px;display:inline-flex;justify-content:center;align-items:center;gap:12px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;transition:.2s ease}.btn-primary{color:var(--cream);background:linear-gradient(160deg,#0A0A0A 0%,#1A0A02 42%,#5C2E0E 100%);box-shadow:0 18px 34px rgba(10,10,10,.24),inset 0 1px 0 rgba(255,255,255,.12);border:1px solid rgba(245,215,142,.32);text-shadow:0 1px 1px rgba(0,0,0,.35)}.btn-secondary{color:var(--body);background:rgba(248,244,236,.54);border:1px solid rgba(123,79,36,.34)}.btn-text{background:transparent;color:var(--brown-dark);min-width:auto;padding:12px 10px;text-transform:none;letter-spacing:0;border:0}.btn:hover{transform:translateY(-2px);box-shadow:0 22px 42px rgba(61,32,16,.18)}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}.small-note{text-align:center;color:var(--brown-dark);font-size:13px;margin-top:18px;line-height:1.6}.result-name{text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(50px,8vw,86px);line-height:.96;letter-spacing:-.04em;margin:6px 0 18px;color:#251206;text-shadow:0 2px 0 rgba(92,46,14,.10),0 14px 30px rgba(92,46,14,.15)}.result-kicker{text-align:center;font-size:12px;color:var(--brown-dark);margin-bottom:12px;letter-spacing:.16em;text-transform:uppercase}.result-summary{font-size:clamp(17px,2.2vw,21px);text-align:center;line-height:1.65;max-width:730px;margin:0 auto 28px;font-weight:300;color:rgba(61,32,16,.76)}.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px auto;max-width:780px}.mini{border:1px solid rgba(123,79,36,.22);border-radius:20px;padding:18px;background:rgba(248,244,236,.48);text-align:center;box-shadow:0 12px 24px rgba(61,32,16,.08)}.mini b{display:block;font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:300;margin-bottom:6px;color:#251206}.mini span{font-size:13px;line-height:1.55;color:rgba(61,32,16,.72)}.detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}.detail,.idea-col{border:1px solid rgba(123,79,36,.22);border-radius:22px;padding:21px;background:rgba(248,244,236,.48);box-shadow:0 12px 28px rgba(61,32,16,.08)}.detail h4,.idea-col h4{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:30px;margin:0 0 12px;color:#251206}.detail ul,.idea-col ol{margin:0;padding-left:18px;line-height:1.7;color:rgba(61,32,16,.76)}.detail p{line-height:1.75;color:rgba(61,32,16,.76)}.idea-section{border-top:1px solid rgba(123,79,36,.20);padding-top:26px;margin-top:28px}.ideas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.prompt-box{background:rgba(10,10,10,.88);border:1px solid rgba(201,166,70,.30);border-radius:22px;padding:20px;max-height:430px;overflow:auto;white-space:pre-wrap;font:400 14px/1.7 'DM Sans',sans-serif;color:var(--cream2);box-shadow:0 18px 46px rgba(10,10,10,.18),inset 0 1px 0 rgba(255,255,255,.07)}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(120%);background:rgba(10,10,10,.92);color:var(--cream);padding:12px 18px;border-radius:999px;z-index:100;transition:.25s ease;font-size:14px}.toast.show{transform:translateX(-50%) translateY(0)}.footer{text-align:center;margin-top:22px;color:rgba(61,32,16,.70);font-size:13px;line-height:1.7}.footer a{color:var(--body);text-decoration:none;border-bottom:1px solid rgba(139,105,20,.35)}.back{position:absolute;top:18px;left:18px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(123,79,36,.26);background:rgba(248,244,236,.58);color:var(--brown-dark);cursor:pointer;display:none;align-items:center;justify-content:center;font-size:22px;z-index:5;box-shadow:0 10px 24px rgba(61,32,16,.10)}.back.show{display:flex}.back:hover{transform:translateY(-1px)}
+@media(max-width:720px){.site-header{align-items:flex-start}.site-brand{font-size:8px}.site-links{flex-wrap:wrap;justify-content:flex-end}.site-links a{font-size:8px;padding:7px 9px}.page{padding:24px 12px 38px;align-items:flex-start}.card{padding:28px 18px 50px;border-radius:24px}.benefits,.mini-grid,.ideas,.detail-grid{grid-template-columns:1fr}.benefits{gap:10px}.benefit{font-size:24px}.option{grid-template-columns:34px 1fr;padding:16px 14px;font-size:15px}.option .letter{width:34px;height:34px}.btn{width:100%;min-width:0}.logo{width:160px}h1{font-size:54px}h2{font-size:43px}.card:after{width:32px;height:32px}.back{top:14px;left:14px;width:38px;height:38px}.prompt-box{max-height:360px}}
+</style>
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-brand">ESG Experience™</div>
+    <nav class="site-links">
+      <a href="https://instagram.com/eilensg" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://wa.me/17863038025" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </header>
+  <div class="page">
+    <main class="shell">
+      <button class="back" id="backBtn" aria-label="Volver">←</button>
+      <div class="topline">ESG EXPERIENCE</div>
+      <img class="logo" src="assets/esg-logo.png" alt="ESG Experience" />
+      <section class="card" id="app">
+        <div class="screen active" data-screen="welcome">
+          <div class="eyebrow">Mapa Inicial de Marca</div>
+          <h1>Construye una <span class="gold-word">marca</span> sin exponer tu vida</h1>
+          <p class="subtitle">Descubre qué tipo de presencia puedes construir con lo que ya sabes, qué parte de ti puedes proteger y cómo usar IA sin que tu marca se sienta genérica.</p>
+          <div class="meta">
+            <span class="pill">5 minutos</span>
+            <span class="pill">resultado personalizado</span>
+            <span class="pill">prompt final poderoso</span>
+          </div>
+          <div class="benefits">
+            <div class="benefit">Más claridad</div>
+            <div class="benefit">Más dirección</div>
+            <div class="benefit">Menos exposición</div>
+          </div>
+          <div class="actions"><button class="btn btn-primary" id="startBtn">Empezar quiz →</button></div>
+          <p class="small-note">No te pide correo. Solo te devuelve una primera dirección para empezar mejor.</p>
+        </div>
+
+        <div class="screen" data-screen="intro">
+          <div class="eyebrow">Antes de empezar</div>
+          <h2>Hagámoslo más tuyo.</h2>
+          <p class="q-help">Estas dos respuestas son opcionales, pero ayudan a que el prompt final no se sienta genérico.</p>
+          <div class="field"><label for="nameInput">Nombre o cómo quieres que te llame</label><input id="nameInput" type="text" placeholder="Ej. Eilen" /></div>
+          <div class="field"><label for="projectInput">Idea, negocio, tema o proyecto que quieres trabajar</label><textarea id="projectInput" placeholder="Ej. una marca personal como agente de viajes sin mostrar mi vida privada"></textarea></div>
+          <div class="actions"><button class="btn btn-primary" id="introNext">Continuar →</button><button class="btn btn-text" id="skipIntro">Saltar esto</button></div>
+        </div>
+
+        <div class="screen" data-screen="quiz">
+          <div class="progress-wrap"><div class="progress-label" id="progressLabel">Pregunta 1 de 10</div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div></div>
+          <h2 class="q-title" id="questionTitle"></h2>
+          <p class="q-help" id="questionHelp"></p>
+          <div class="options" id="options"></div>
+          <div class="actions"><button class="btn btn-primary" id="nextBtn" disabled>Continuar →</button></div>
+        </div>
+
+        <div class="screen" data-screen="result">
+          <div class="result-kicker" id="helloLine">Tu resultado inicial</div>
+          <div class="result-name" id="resultTitle"></div>
+          <p class="result-summary" id="resultSummary"></p>
+          <div class="mini-grid" id="miniGrid"></div>
+          <div class="actions"><button class="btn btn-primary" id="seeDetails">Ver mi dirección completa →</button></div>
+        </div>
+
+        <div class="screen" data-screen="details">
+          <div class="eyebrow">Tu dirección inicial</div>
+          <h2 id="detailsTitle"></h2>
+          <p class="q-help" id="detailsIntro"></p>
+          <div class="detail-grid" id="detailGrid"></div>
+          <div class="idea-section"><h3>Ideas para empezar</h3><div class="ideas" id="ideasGrid"></div></div>
+          <div class="actions"><button class="btn btn-primary" id="seePrompt">Ver mi prompt personalizado →</button></div>
+        </div>
+
+        <div class="screen" data-screen="prompt">
+          <div class="eyebrow">Prompt personalizado</div>
+          <h2>Tu prompt inicial</h2>
+          <p class="q-help">Cópialo y pégalo en ChatGPT, Claude o Gemini. Ya incluye tu resultado y tus respuestas para que la IA no empiece desde cero.</p>
+          <div class="prompt-box" id="promptBox"></div>
+          <div class="actions">
+            <button class="btn btn-primary" id="copyPrompt">Copiar prompt</button>
+            <a class="btn btn-secondary" id="waBtn" target="_blank" rel="noopener">Desarrollar mi marca con ESG</a>
+          </div>
+          <div class="footer">Creado por <a href="https://instagram.com/eilensg" target="_blank" rel="noopener">@eilensg</a> · <a href="https://wa.me/17863038025" target="_blank" rel="noopener">WhatsApp</a> · ESG Experience™</div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast">Prompt copiado</div>
+
+  <script>
+  const WA_NUMBER = '17863038025';
+  const IG_URL = 'https://instagram.com/eilensg';
+
+  const types = {
+    A: {
+      name:'Marca Directora', short:'Tu marca no necesita mostrarlo todo. Necesita comunicar criterio, postura y dirección.',
+      summary:'Tu presencia puede construirse desde cómo piensas, cómo decides, qué observas y qué has aprendido. La vida privada puede seguir siendo tuya; tu experiencia sí puede convertirse en una marca reconocible.',
+      minis:['Aportas criterio','Proteges tu intimidad','Conectas desde experiencia'],
+      intro:'Tu ruta empieza por ordenar tu voz y convertir tu experiencia en una presencia que se pueda reconocer sin abrir tu vida privada.',
+      show:['tu punto de vista','tus aprendizajes','errores convertidos en lecciones','procesos de decisión','límites y postura','cómo resuelves problemas'],
+      protect:['tu casa','tu familia','tu rutina íntima','momentos personales que no quieres convertir en contenido','partes de ti que no tienen que estar disponibles para vender'],
+      content:['reels hablando desde experiencia','carruseles de reflexión estratégica','historias tipo yapping con una idea clara','posts de opinión','análisis de errores comunes'],
+      ai:['ordenar tus ideas','convertir experiencias en guiones','crear imágenes de apoyo','estructurar series de contenido','resumir tu criterio sin cambiar tu voz'],
+      reels:['No necesitas contar tu vida para que tu marca conecte.','La diferencia entre mostrar rutina y construir criterio.','Lo que aprendí cuando dejé de publicar por presión y empecé a publicar con dirección.'],
+      carousels:['5 cosas que sí puedes mostrar sin exponer tu vida privada.','Tu experiencia también es contenido.','Cómo saber qué parte de ti construye marca y qué parte debes proteger.'],
+      stories:['Hoy estaba pensando en esto: muchas personas creen que marca personal es mostrarlo todo.','Encuesta: ¿Te cuesta saber qué mostrar y qué proteger?','Mini lección: Tu vida privada no tiene que ser contenido. Tu criterio sí puede serlo.'],
+      warning:'No conviertas cada momento personal en contenido solo para sentir que estás siendo cercana. La cercanía también se construye con criterio repetido con intención.'
+    },
+    B: {
+      name:'Marca Educadora', short:'Tu marca puede crecer enseñando lo que sabes de forma simple, útil y ordenada.',
+      summary:'Tienes potencial para convertir conocimiento, procesos o aprendizajes en contenido que otros puedan entender y aplicar. Tu problema no es no tener nada que decir; probablemente tienes demasiado sin una estructura clara.',
+      minis:['Explicas fácil','Ordenas conocimiento','Creas contenido guardable'],
+      intro:'Tu ruta empieza por elegir qué parte de lo que sabes puede ayudar primero, sin intentar enseñarlo todo al mismo tiempo.',
+      show:['explicaciones simples','pasos','errores comunes','comparaciones','ejemplos','mini guías','tu forma de simplificar temas'],
+      protect:['tu vida íntima','tu tiempo','tu energía diaria','la presión de estar siempre visible','el exceso de improvisación'],
+      content:['carruseles guardables','reels educativos cortos','historias de preguntas y respuestas','mini tutoriales','guías descargables','comparaciones simples'],
+      ai:['organizar tu conocimiento','crear estructuras de carrusel','convertir ideas en guiones','resumir procesos','crear recursos educativos'],
+      reels:['Si sabes mucho pero no sabes qué publicar, empieza por esto.','El error de intentar enseñar todo en un solo post.','Cómo convertir una experiencia en una mini lección.'],
+      carousels:['3 preguntas para ordenar tu conocimiento antes de crear contenido.','Cómo saber qué tema puede convertirse en guía, reel o carrusel.','No tienes que enseñar todo. Tienes que enseñar lo correcto primero.'],
+      stories:['Caja: ¿Qué tema te cuesta explicar en tu marca?','Mini clase: Una idea no necesita ser grande para ser útil.','CTA suave: Si quieres ordenar tus temas, guarda esto.'],
+      warning:'No intentes demostrar todo lo que sabes en cada pieza. Una marca educadora se recuerda cuando explica una cosa bien, no cuando lo explica todo junto.'
+    },
+    C: {
+      name:'Marca Visual', short:'Tu marca necesita hacerse reconocible antes de seguir produciendo más piezas.',
+      summary:'Tu presencia puede elevarse cuando las imágenes, escenas, fondos, estilo y mensajes dejan de sentirse separados. No se trata solo de verse bonita; se trata de que la gente pueda identificar tu marca antes de leer tu nombre.',
+      minis:['Elevas percepción','Ganas coherencia','Dejas de verte genérica'],
+      intro:'Tu ruta empieza por definir qué debe repetirse visualmente para que cada pieza parezca venir del mismo mundo.',
+      show:['procesos visuales','antes y después','escenas de marca','moodboards','imágenes generadas con IA','resultados','detalles de estilo'],
+      protect:['salir todo el tiempo en cámara','depender de fotos perfectas','mostrar tu vida diaria completa','publicar solo por obligación'],
+      content:['antes/después de identidad visual','reels de transformación','carruseles de análisis visual','ejemplos de coherencia','clips de proceso','imágenes con la misma línea estética'],
+      ai:['crear escenas','generar fondos','crear moodboards','construir gemelas digitales o avatares','mantener una dirección visual repetible'],
+      reels:['Tus imágenes son bonitas, pero no parecen de la misma marca.','La diferencia entre estética y dirección visual.','Cómo una imagen empieza a parecer marca y no solo contenido.'],
+      carousels:['5 señales de que tu marca visual todavía no es reconocible.','Qué repetir para que una marca se quede en la mente.','Antes de generar imágenes con IA, define esto.'],
+      stories:['Mostrar dos imágenes y preguntar: ¿Se sienten de la misma marca?','Mini explicación: La coherencia no es repetir colores. Es repetir intención.','CTA: Si tus imágenes no se conectan, este es tu punto de partida.'],
+      warning:'No uses IA solo para producir imágenes bonitas. Sin dirección visual, la IA puede darte piezas atractivas que no construyen memoria de marca.'
+    },
+    D: {
+      name:'Marca Universo / Personaje', short:'Tu marca puede diferenciarse creando un mundo propio, avatar, personaje o cuenta animada.',
+      summary:'Tu presencia puede vivir a través de un personaje, avatar, mascota, gemela digital o universo visual. Pero un personaje no es un adorno: funciona cuando tiene intención, coherencia y una razón clara para existir.',
+      minis:['Creas recordación','Ganas movimiento','Proteges tu identidad real'],
+      intro:'Tu ruta empieza por decidir qué función cumple el personaje dentro de la marca: atraer, explicar, entretener, vender o demostrar.',
+      show:['avatar o personaje','escenas animadas','mini historias','trends adaptados','rutinas del personaje','productos integrados naturalmente','frases recurrentes'],
+      protect:['tu rostro real','tu vida privada','tu rutina personal','la necesidad de aparecer todos los días','tu identidad si prefieres crear desde un universo separado'],
+      content:['reels cortos de personaje','clips de 5 segundos','escenas lifestyle','trends reinterpretados','recomendaciones de productos dentro de la rutina','colaboraciones con tu cuenta principal'],
+      ai:['crear el rostro y estilo del personaje','diseñar escenas','generar movimiento','construir su universo visual','documentar una Character Bible'],
+      reels:['Un personaje no es un adorno. Es una marca que puede vivir sola.','Cómo usar un avatar sin que tu marca se sienta falsa.','La diferencia entre una muñeca bonita y un personaje con estrategia.'],
+      carousels:['5 cosas que debe tener un personaje de marca.','Qué puede mostrar un avatar que tú no quieres mostrar.','Cómo integrar productos en la vida de un personaje sin que parezca anuncio.'],
+      stories:['Encuesta: ¿Te gustaría tener un personaje para tu marca?','BTS: mostrar cómo nace una escena del personaje.','CTA: Si quieres crear un universo para tu marca, guarda esta idea.'],
+      warning:'No crees un personaje solo porque se ve bonito o viral. Si no tiene función, personalidad y repetición, se vuelve decoración.'
+    }
+  };
+  const hybridText = {
+    'AB':'Tu marca debe hablar desde tu experiencia y convertirla en enseñanza. Tu ruta ideal une opinión, educación y contenido guardable.',
+    'AC':'Tu marca necesita unir criterio con presencia visual. Tu imagen debe sostener lo que piensas y cómo quieres ser recordada.',
+    'AD':'Tu marca puede usar una voz humana fuerte y un universo creativo como extensión visual. Tú diriges, el personaje demuestra.',
+    'BC':'Tu conocimiento puede crecer más si se vuelve visualmente reconocible. Tu ruta ideal une carruseles útiles, ejemplos y una estética consistente.',
+    'BD':'Tu conocimiento puede volverse más fácil de consumir si lo traduces a un personaje, avatar o formato animado.',
+    'CD':'Tu marca tiene potencial visual fuerte y puede convertirse en un universo reconocible. Tu reto no es crear más imágenes, sino hacer que parezcan venir del mismo mundo.'
+  };
+
+  const questions = [
+    {q:'¿Qué quieres construir ahora mismo?', help:'Elige la opción que más se parece a tu punto de partida.', opts:[['A','Una marca personal donde pueda hablar desde mi experiencia.'],['B','Una cuenta educativa para enseñar lo que sé.'],['C','Una presencia visual más profesional para mi negocio o proyecto.'],['D','Un universo creativo con avatar, personaje, historias o contenido animado.']]},
+    {q:'¿Qué es lo que más te bloquea al crear contenido?', help:'No respondas lo que “debería” pasar. Responde lo que realmente te frena.', opts:[['A','No sé cómo hablar de mí sin sentir que me expongo demasiado.'],['B','Tengo mucho conocimiento, pero no sé cómo organizarlo en contenido.'],['C','Siento que mis imágenes o publicaciones no se ven coherentes entre sí.'],['D','Tengo muchas ideas creativas, pero no sé cómo convertirlas en una marca clara.']]},
+    {q:'¿Qué parte de ti sí estarías dispuesta a mostrar?', help:'Tu marca puede ser humana sin tener que abrirlo todo.', opts:[['A','Mi criterio, mis opiniones y mi forma de ver las cosas.'],['B','Lo que sé, lo que he aprendido y lo que puedo enseñar.'],['C','Mi estilo, mis referencias, mis procesos y mis resultados visuales.'],['D','Mis ideas, mis personajes, mis historias o un mundo creado por mí.']]},
+    {q:'¿Qué parte de tu vida quieres proteger?', help:'Esto ayuda a separar presencia de exposición.', opts:[['A','Mi familia, mi casa, mi rutina íntima o mi vida personal.'],['B','Mi tiempo y mi energía; no quiero crear contenido todo el día.'],['C','Mi imagen; no quiero salir siempre en cámara o depender de fotos perfectas.'],['D','Mi identidad real; prefiero expresarme a través de un personaje o universo.']]},
+    {q:'¿Qué tipo de contenido se te haría más natural sostener?', help:'La mejor estrategia también tiene que poder sostenerse en tu vida real.', opts:[['A','Reflexiones, opiniones, experiencias y aprendizajes.'],['B','Carruseles, guías, tutoriales, listas y explicaciones.'],['C','Antes/después, imágenes, moodboards, ejemplos visuales y procesos.'],['D','Reels cortos, escenas animadas, personajes, trends y mini historias.']]},
+    {q:'¿Cómo te gustaría que las personas te recordaran?', help:'Esto revela el tipo de memoria de marca que quieres crear.', opts:[['A','Como alguien con criterio claro y una forma propia de pensar.'],['B','Como alguien que explica fácil y ayuda a ordenar ideas.'],['C','Como una marca visualmente reconocible y bien dirigida.'],['D','Como un universo creativo que entretiene, inspira o mueve a la acción.']]},
+    {q:'Si usaras IA para tu marca, ¿para qué te gustaría usarla primero?', help:'La IA debe ayudarte a construir dirección, no a perder identidad.', opts:[['A','Para ordenar mi mensaje y encontrar mi voz.'],['B','Para convertir mis conocimientos en contenido.'],['C','Para crear imágenes, escenas, identidad visual y coherencia estética.'],['D','Para crear personajes, avatares, reels animados o contenido de entretenimiento.']]},
+    {q:'¿Qué frase se parece más a lo que estás buscando?', help:'Elige la que te haría decir: “esto es lo que necesito”.', opts:[['A','Quiero que mi marca se sienta como yo, pero sin mostrarlo todo.'],['B','Quiero que lo que sé se entienda y se convierta en contenido útil.'],['C','Quiero que mi marca se vea profesional y reconocible.'],['D','Quiero crear algo diferente, entretenido y con personalidad propia.']]},
+    {q:'¿Qué te gustaría que tu marca hiciera por ti?', help:'Aquí definimos la función real de tu presencia.', opts:[['A','Que me posicione como referente sin contar mi vida completa.'],['B','Que organice mi conocimiento y atraiga personas interesadas.'],['C','Que eleve la percepción de mi proyecto y se vea más profesional.'],['D','Que me permita crear contenido con más libertad, personajes y movimiento.']]},
+    {q:'¿Qué resultado te gustaría recibir hoy?', help:'Esto ajusta el enfoque del resultado final.', opts:[['A','Claridad sobre cómo hablar de mi marca sin exponerme.'],['B','Ideas de contenido para empezar a enseñar lo que sé.'],['C','Una dirección visual inicial para que mi marca se vea coherente.'],['D','Una idea de universo, avatar o personaje para diferenciar mi marca.']]}
+  ];
+
+  const state = {screen:'welcome', idx:0, answers:[], name:'', project:'', result:null, secondary:null};
+  const $ = s => document.querySelector(s);
+  const screens = [...document.querySelectorAll('.screen')];
+  const backBtn = $('#backBtn');
+
+  function show(screen){
+    state.screen=screen; screens.forEach(el=>el.classList.toggle('active', el.dataset.screen===screen));
+    backBtn.classList.toggle('show', !['welcome','result'].includes(screen));
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function renderQuestion(){
+    const item = questions[state.idx];
+    $('#progressLabel').textContent = `Pregunta ${state.idx+1} de ${questions.length}`;
+    $('#progressBar').style.width = `${((state.idx+1)/questions.length)*100}%`;
+    $('#questionTitle').textContent = item.q;
+    $('#questionHelp').textContent = item.help;
+    $('#nextBtn').disabled = !state.answers[state.idx];
+    $('#options').innerHTML = item.opts.map(([k,v])=>`<button class="option ${state.answers[state.idx]?.key===k?'selected':''}" data-key="${k}" data-text="${escapeHtml(v)}"><span class="letter">${k}</span><span>${v}</span></button>`).join('');
+    document.querySelectorAll('.option').forEach(btn=>btn.addEventListener('click',()=>{
+      state.answers[state.idx] = {key:btn.dataset.key, text:btn.dataset.text, question:item.q};
+      renderQuestion();
+    }));
+  }
+  function escapeHtml(str){return str.replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+  function calculate(){
+    const scores={A:0,B:0,C:0,D:0}; state.answers.forEach(a=>scores[a.key]++);
+    const sorted=Object.entries(scores).sort((a,b)=>b[1]-a[1]);
+    const top=sorted[0]; const second=sorted[1];
+    state.result=top[0];
+    state.secondary = (second[1] === top[1] || (top[1]-second[1]===1 && second[1]>=3)) ? second[0] : null;
+    return scores;
+  }
+  function resultLabel(){
+    if(!state.secondary) return types[state.result].name;
+    const pair=[state.result,state.secondary].sort().join('');
+    const names={AB:'Marca Directora Educadora',AC:'Marca Directora Visual',AD:'Marca Directora con Universo',BC:'Marca Educadora Visual',BD:'Marca Educadora con Personaje',CD:'Marca Visual con Universo'};
+    return names[pair] || types[state.result].name;
+  }
+  function renderResult(){
+    calculate();
+    const t=types[state.result]; const name=state.name.trim();
+    $('#helloLine').textContent = name ? `${name}, tu resultado inicial es` : 'Tu resultado inicial es';
+    $('#resultTitle').innerHTML = resultLabel().replace('Marca ', '<span class="gold-word">Marca</span> ');
+    const pair = state.secondary ? [state.result,state.secondary].sort().join('') : null;
+    $('#resultSummary').textContent = pair ? `${hybridText[pair]} ${t.summary}` : t.summary;
+    $('#miniGrid').innerHTML = t.minis.map(m=>`<div class="mini"><b>${m}</b><span>${miniExplain(m)}</span></div>`).join('');
+    const msg = `Hola, hice el Mapa Inicial de Marca y quiero desarrollar mi resultado con ESG. Mi resultado fue: ${resultLabel()}.`;
+    $('#waBtn').href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+  }
+  function miniExplain(m){
+    const map={
+      'Aportas criterio':'Tu valor vive en tu forma de mirar y decidir.','Proteges tu intimidad':'No necesitas convertir tu vida completa en contenido.','Conectas desde experiencia':'Lo que viviste puede volverse guía para otros.',
+      'Explicas fácil':'Tu marca crece cuando haces simple lo que sabes.','Ordenas conocimiento':'Tu audiencia necesita una ruta, no todo tu archivo mental.','Creas contenido guardable':'Tu contenido puede convertirse en recurso, no solo publicación.',
+      'Elevas percepción':'Tu presencia visual puede aumentar confianza.','Ganas coherencia':'Tus piezas empiezan a sentirse del mismo mundo.','Dejas de verte genérica':'La IA trabaja para tu marca, no contra ella.',
+      'Creas recordación':'Un personaje bien dirigido puede quedarse en la mente.','Ganas movimiento':'Tu marca puede producir contenido rápido y vivo.','Proteges tu identidad real':'Puedes crear presencia sin aparecer siempre.'
+    }; return map[m]||'';
+  }
+  function renderDetails(){
+    const t=types[state.result];
+    $('#detailsTitle').textContent = resultLabel();
+    $('#detailsIntro').textContent = t.intro;
+    $('#detailGrid').innerHTML = `
+      <div class="detail"><h4>Qué puedes mostrar</h4><ul>${t.show.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      <div class="detail"><h4>Qué puedes proteger</h4><ul>${t.protect.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      <div class="detail"><h4>Contenido recomendado</h4><ul>${t.content.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      <div class="detail"><h4>Cómo usar IA</h4><ul>${t.ai.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      <div class="detail" style="grid-column:1/-1"><h4>Advertencia estratégica</h4><p>${t.warning}</p></div>`;
+    $('#ideasGrid').innerHTML = `
+      <div class="idea-col"><h4>Reels</h4><ol>${t.reels.map(x=>`<li>${x}</li>`).join('')}</ol></div>
+      <div class="idea-col"><h4>Carruseles</h4><ol>${t.carousels.map(x=>`<li>${x}</li>`).join('')}</ol></div>
+      <div class="idea-col"><h4>Historias</h4><ol>${t.stories.map(x=>`<li>${x}</li>`).join('')}</ol></div>`;
+  }
+  function buildPrompt(){
+    const name=state.name.trim()||'No indicado';
+    const project=state.project.trim()||'No indicado';
+    const t=types[state.result];
+    const answers = state.answers.map((a,i)=>`${i+1}. ${a.question}\nRespuesta: ${a.text}`).join('\n\n');
+    const secondary = state.secondary ? `\nResultado secundario detectado: ${types[state.secondary].name}` : '';
+    const pair = state.secondary ? [state.result,state.secondary].sort().join('') : null;
+    const hybrid = pair ? `\nLectura híbrida: ${hybridText[pair]}` : '';
+    return `Actúa como una estratega de marca personal, arquitectura de contenido y dirección visual.\n\nQuiero construir una marca reconocible sin sentir que tengo que exponer toda mi vida privada. También quiero usar inteligencia artificial con dirección, sin que mi marca se sienta genérica, fría o desconectada de mi identidad.\n\nDATOS INICIALES\nNombre: ${name}\nIdea, negocio, tema o proyecto que quiero trabajar: ${project}\n\nRESULTADO DEL MAPA INICIAL DE MARCA ESG\nTipo de marca inicial: ${resultLabel()}${secondary}${hybrid}\n\nLectura principal:\n${t.summary}\n\nMIS RESPUESTAS\n${answers}\n\nCon esta información, ayúdame a crear una primera dirección de marca que sea humana, clara, aplicable y estratégica.\n\nQuiero que me entregues:\n\n1. Diagnóstico claro de mi situación actual.\nExplica qué parece estar pasando con mi marca o idea, sin juzgarme y sin usar frases genéricas.\n\n2. Qué tipo de marca debería construir y por qué.\nUsa mi resultado del quiz, pero adapta la respuesta a mi idea/proyecto y a mis respuestas.\n\n3. Qué partes de mi experiencia pueden convertirse en contenido.\nNo me recomiendes exponer mi vida privada si no es necesario. Ayúdame a separar vida personal de valor de marca.\n\n4. Qué partes de mi vida privada puedo proteger sin afectar mi presencia.\nDime cómo puedo crear cercanía sin mostrar casa, familia, rutina íntima o momentos que quiero conservar para mí.\n\n5. Tres ángulos de posicionamiento.\nCada ángulo debe incluir: nombre del ángulo, idea central, a quién atrae y qué tipo de contenido lo sostiene.\n\n6. Tres pilares de contenido iniciales.\nCada pilar debe incluir: objetivo, temas posibles y ejemplos de publicaciones.\n\n7. Tres ideas de reels.\nPara cada reel dame: hook inicial, idea central, desarrollo breve y CTA suave.\n\n8. Tres ideas de carruseles.\nPara cada carrusel dame: título, slide 1 a slide 7 y CTA final.\n\n9. Tres ideas de historias de Instagram.\nDame secuencias conversacionales que abran conversación, no historias genéricas.\n\n10. Tres formas de usar IA sin perder mi identidad.\nDime qué tareas sí delegaría a la IA y qué decisiones deben seguir saliendo de mi criterio.\n\n11. Una primera bio para Instagram.\nDebe decir qué hago, para quién, cómo lo hago y qué problema resuelvo. Máximo 4 líneas.\n\n12. Una frase central de marca.\nDebe ser recordable, humana y específica. No uses frases motivacionales vacías.\n\n13. Qué NO debería hacer.\nDame una advertencia clara sobre el error principal que podría hacer que mi marca se vea genérica o dispersa.\n\n14. Plan simple de acción para los próximos 7 días.\nUn paso por día, realista y fácil de ejecutar.\n\n15. Preguntas que debo responder antes de desarrollar mi marca completa.\nHazme máximo 7 preguntas potentes para llevarle luego esta información a una estratega o asistente de marca.\n\nImportante:\n- No quiero una respuesta genérica.\n- No quiero que me recomiendes mostrar mi vida privada si no es necesario.\n- No quiero frases tipo “no te falta X, te falta Y”.\n- No quiero tono de gurú ni marketing vacío.\n- Quiero una dirección clara, humana, sabia, cercana y aplicable.\n- Habla en español.\n- Usa tono estratégico, empático y directo.\n- Si falta información, primero dame una propuesta inicial con lo que tienes y luego hazme preguntas.\n\nAl final agrega esta nota:\n“Este resultado es un punto de partida. Si ya formas parte de ESG Experience™, lleva este resultado a Marta para desarrollar tu arquitectura completa de marca.”`;
+  }
+  function renderPrompt(){ $('#promptBox').textContent = buildPrompt(); }
+
+  $('#startBtn').addEventListener('click',()=>show('intro'));
+  $('#introNext').addEventListener('click',()=>{state.name=$('#nameInput').value; state.project=$('#projectInput').value; renderQuestion(); show('quiz');});
+  $('#skipIntro').addEventListener('click',()=>{state.name=''; state.project=''; renderQuestion(); show('quiz');});
+  $('#nextBtn').addEventListener('click',()=>{
+    if(state.idx < questions.length-1){ state.idx++; renderQuestion(); }
+    else { renderResult(); show('result'); }
+  });
+  $('#seeDetails').addEventListener('click',()=>{renderDetails(); show('details');});
+  $('#seePrompt').addEventListener('click',()=>{renderPrompt(); show('prompt');});
+  $('#copyPrompt').addEventListener('click',async()=>{
+    const text=$('#promptBox').textContent;
+    try{ await navigator.clipboard.writeText(text); toast('Prompt copiado'); }
+    catch(e){ const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); toast('Prompt copiado'); }
+  });
+  backBtn.addEventListener('click',()=>{
+    if(state.screen==='intro') show('welcome');
+    else if(state.screen==='quiz'){ if(state.idx>0){state.idx--; renderQuestion();} else show('intro'); }
+    else if(state.screen==='details') show('result');
+    else if(state.screen==='prompt') show('details');
+  });
+  function toast(msg){ const t=$('#toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),1800); }
+  </script>
+</body>
+</html>
